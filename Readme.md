@@ -1,6 +1,6 @@
 
 <h2 align="center">Learning</h2>
-<h3 align="center">A simple readme with list of concepts to be covered to **learn Go language** and also **code snippets helping in using golang in Web Development**</h3>
+<h3 align="center">A simple readme with list of concepts to be covered to <strong>learn Go language</strong> and also <strong>code snippets helping in using golang in Web Development</strong></h3>
 
 ## Contents
 * [Concepts to learn before diving into Web](#Initial-Concepts-List)
