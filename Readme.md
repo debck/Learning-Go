@@ -1,7 +1,7 @@
 This is just a simple readme where I have jotted down my learning of Golang.
 
 ## Contents
-
+* [Concepts to learn before diving into Web](#Initial-Concepts-List)
 * [Basic Hello World](#Basic-Hello-World)
 * [Creating HTTP Server]()
 * [Creating Routes]()
@@ -10,7 +10,29 @@ This is just a simple readme where I have jotted down my learning of Golang.
 * [Sessions Management]()
 * [Adding Database]()
 * [Working with Websockets]()
-* [templating Engines]()
+* [Templating Engines]()
+
+
+
+
+## Initial Concepts List
+
+* Basic Understanding of
+    * Variables
+    * Constants
+    * Packages and import/export
+    * Functions
+    * Pointers
+    * Mutability
+ * Types
+    * Type Conversion 
+    * Type assertion*
+    * Structs
+    * Composition
+ * 
+
+
+
 
 
 ## Basic Hello World
