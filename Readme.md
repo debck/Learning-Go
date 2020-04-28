@@ -5,7 +5,7 @@
 ## Contents
 * [Concepts to learn before diving into Web](#Initial-Concepts-List)
 * [Basic Hello World](#Basic-Hello-World)
-* [Creating HTTP Server]()
+* [Adding static assets](#Adding-static-asset)
 * [Creating Routes]()
 * [Adding Forms]()
 * [Adding MiddleWare]()
@@ -32,7 +32,7 @@
     * Structs
     * Composition
  * Collection Types
-   * 
+    * Arrays
 
 
 
@@ -50,8 +50,24 @@ import (
 
 func main() {
     http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "Hello, you've requested: %s\n", r.URL.Path)
+        fmt.Fprintf(w, "Hello, World !")
     })
+
+    http.ListenAndServe(":80", nil)
+}
+```
+
+
+## Adding static asset
+
+```go
+func main() {
+    http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "Hello World!")
+    })
+   
+    fs := http.FileServer(http.Dir("static/"))
+    http.Handle("/static/", http.StripPrefix("/static/", fs))
 
     http.ListenAndServe(":80", nil)
 }
