@@ -1,4 +1,6 @@
-This is just a simple readme where I have jotted down my learning of Golang.
+
+<h2 align="center">Learning</h2>
+<h3 align="center">A simple readme with list of concepts to be covered to **learn Go language** and also **code snippets helping in using golang in Web Development**</h3>
 
 ## Contents
 * [Concepts to learn before diving into Web](#Initial-Concepts-List)
@@ -26,10 +28,11 @@ This is just a simple readme where I have jotted down my learning of Golang.
     * Mutability
  * Types
     * Type Conversion 
-    * Type assertion*
+    * Type assertion**
     * Structs
     * Composition
- * 
+ * Collection Types
+   * 
 
 
 
