@@ -124,6 +124,48 @@ func main() {
 
 ## Adding Forms
 
+Considering the form has 2 fields `Email` and `Message`.
+
+```go
+
+package main
+
+import (
+	"log"
+	"fmt"
+	"net/http"
+)
+
+type Details struct {
+    Email   string
+    Message string
+}
+
+func messageHandle(w http.ResponseWriter, r *http.Request) {
+	if err := r.ParseForm(); err != nil {
+		fmt.Fprintf(w, "ParseForm() err: %v", err)
+		return
+	}
+	
+	data := Details{
+		Email:   r.FormValue("email"),
+		Message: r.FormValue("message"),
+        }
+
+        // do something with the data
+}
+
+func main() {
+    http.HandleFunc("/", messageHandle)
+    
+    if err := http.ListenAndServe(":8080", nil); err != nil {
+        log.Fatal(err)
+    }
+}
+
+
+```
+
 ## Adding MiddleWare
 
 ## Sessions Management
