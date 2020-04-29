@@ -3,6 +3,7 @@
 > I tried to jot down when I was learning. Might be helpful for some people.
 
 ## Contents
+* [Installation](#Installation)
 * [Concepts to learn before diving into Web](#Initial-Concepts-List)
 * [Basic Hello World](#Basic-Hello-World)
 * [Adding static assets](#Adding-static-asset)
@@ -16,7 +17,9 @@
 * 
 
 
+## Installation
 
+> Follow the [official doc](https://golang.org/doc/install) and Setup Go depending on your OS (ie. Windows , Linux, OS X)
 
 ## Initial Concepts List
 
@@ -34,6 +37,15 @@
     * Composition
  * Collection Types
     * Arrays
+    * Slicing
+    * Range & Maps
+ * Control Flow
+    * If, For, Switch statement
+ * Methods
+ * Interfaces
+ * Concurrency
+    * Goroutines
+    * Channels
 
 
 
