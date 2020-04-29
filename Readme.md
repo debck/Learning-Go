@@ -6,7 +6,7 @@
 * [Concepts to learn before diving into Web](#Initial-Concepts-List)
 * [Basic Hello World](#Basic-Hello-World)
 * [Adding static assets](#Adding-static-asset)
-* [Creating Routes](#-Adding-Routes)
+* [Creating Routes](#Adding-Routes)
 * [Adding Forms]()
 * [Adding MiddleWare]()
 * [Sessions Management]()
