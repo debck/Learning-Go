@@ -1,4 +1,6 @@
-<h3 align="center">A simple readme with list of concepts to be covered to <strong>learn Go language</strong> and also <strong>code snippets helping in using golang in Web Development:tada:</strong></h3>
+<h3 align="center">A simple list of concepts and code snippets that would help in learning Golang and applying in Web Development :tada:</h3>
+
+> I tried to jot down when I was learning. Might be helpful for some people.
 
 ## Contents
 * [Concepts to learn before diving into Web](#Initial-Concepts-List)
