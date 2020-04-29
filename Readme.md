@@ -6,7 +6,7 @@
 * [Concepts to learn before diving into Web](#Initial-Concepts-List)
 * [Basic Hello World](#Basic-Hello-World)
 * [Adding static assets](#Adding-static-asset)
-* [Creating Routes]()
+* [Creating Routes](#-Adding-Routes)
 * [Adding Forms]()
 * [Adding MiddleWare]()
 * [Sessions Management]()
@@ -111,11 +111,11 @@ func getTask(w http.ResponseWriter, r *http.Request) {
 
 
 func main() {
-   router := mux.NewRouter()
+   	router := mux.NewRouter()
 	router.HandleFunc("/task", getAllTask).Methods("GET")
 	router.HandleFunc("/task/{id}", getTask).Methods("GET")
 
-    http.ListenAndServe(":8000", router)
+    	http.ListenAndServe(":8000", router)
 }
 
 ```
