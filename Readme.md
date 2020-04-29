@@ -7,12 +7,13 @@
 * [Basic Hello World](#Basic-Hello-World)
 * [Adding static assets](#Adding-static-asset)
 * [Creating Routes](#Adding-Routes)
-* [Adding Forms]()
-* [Adding MiddleWare]()
-* [Sessions Management]()
-* [Adding Database]()
-* [Working with Websockets]()
-* [Templating Engines]()
+* [Adding Forms](#Adding-Forms)
+* [Adding MiddleWare](#Adding-MiddleWare)
+* [Sessions Management](#Sessions-Management)
+* [Adding Database](#Adding-Database)
+* [Working with Websockets](#Working-with-Websockets)
+* 
+* 
 
 
 
@@ -111,11 +112,22 @@ func getTask(w http.ResponseWriter, r *http.Request) {
 
 
 func main() {
-   	router := mux.NewRouter()
+	router := mux.NewRouter()
 	router.HandleFunc("/task", getAllTask).Methods("GET")
 	router.HandleFunc("/task/{id}", getTask).Methods("GET")
-
-    	http.ListenAndServe(":8000", router)
+	
+	http.ListenAndServe(":8000", router)
 }
 
 ```
+
+
+## Adding Forms
+
+## Adding MiddleWare
+
+## Sessions Management
+
+## Adding Database
+
+## Working with Websockets
