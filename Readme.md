@@ -53,7 +53,7 @@ func main() {
         fmt.Fprintf(w, "Hello, World !")
     })
 
-    http.ListenAndServe(":80", nil)
+    http.ListenAndServe(":8000", nil)
 }
 ```
 
@@ -66,9 +66,56 @@ func main() {
         fmt.Fprintf(w, "Hello World!")
     })
    
-    fs := http.FileServer(http.Dir("static/"))
+    fs := http.FileServer(http.Dir("assets/"))
     http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-    http.ListenAndServe(":80", nil)
+    http.ListenAndServe(":8000", nil)
 }
+```
+
+## Adding Routes
+
+```go
+package main
+
+import (
+    "fmt"
+    "encoding/json"
+    "net/http"
+    "github.com/gorilla/mux"
+)
+
+
+type Tasks struct {
+    ID 			string  	`json:"id,omitempty"`
+    TASKNAME 	string 		`json:"task,omitempty"`
+}
+
+var task []Tasks
+
+func getAllTask(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(task)
+}
+
+
+func getTask(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	for _,item := range task {
+		if item.ID == params["id"] {
+			json.NewEncoder(w).Encode(item)
+			return
+		}
+	}
+	json.NewEncoder(w).Encode(&Tasks{})
+}
+
+
+func main() {
+   router := mux.NewRouter()
+	router.HandleFunc("/task", getAllTask).Methods("GET")
+	router.HandleFunc("/task/{id}", getTask).Methods("GET")
+
+    http.ListenAndServe(":8000", router)
+}
+
 ```
