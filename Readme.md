@@ -69,7 +69,7 @@ func main() {
     http.ListenAndServe(":8000", nil)
 }
 ```
-
+[Go back to top &#8593;](#Contents)
 
 ## Adding static asset
 
@@ -87,6 +87,7 @@ func main() {
     http.ListenAndServe(":8000", nil)
 }
 ```
+[Go back to top &#8593;](#Contents)
 
 ## Adding Routes
 
@@ -135,6 +136,7 @@ func main() {
 
 ```
 
+[Go back to top &#8593;](#Contents)
 
 ## Adding Forms
 
@@ -179,6 +181,8 @@ func main() {
 
 
 ```
+
+[Go back to top &#8593;](#Contents)
 
 ## Adding MiddleWare
 
@@ -234,6 +238,8 @@ func main() {
 
 ```
 
+[Go back to top &#8593;](#Contents)
+
 ## Sessions Management
 
 ```go
@@ -271,6 +277,13 @@ func main() {
 
 ```
 
+[Go back to top &#8593;](#Contents)
+
+
 ## Adding Database
 
+[Go back to top &#8593;](#Contents)
+
 ## Working with Websockets
+
+[Go back to top &#8593;](#Contents)
