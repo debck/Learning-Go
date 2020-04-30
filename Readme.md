@@ -282,6 +282,60 @@ func main() {
 
 ## Adding Database
 
+```go
+
+package main
+
+import (
+"context"
+"fmt"
+"os"
+"time"
+"go.mongodb.org/mongo-driver/mongo"
+"go.mongodb.org/mongo-driver/mongo/options"
+)
+
+type Data struct {
+	ID  int `json:"Field Int"`
+	Task string `json:"Field Str"`
+}
+
+func main() {
+	
+	clientOptions := options.Client().ApplyURI("<MONGO_URI>") 
+
+	// Connect to the MongoDB
+	client, err := mongo.Connect(context.TODO(), clientOptions)
+	
+	if err != nil {
+		fmt.Println("mongo.Connect() ERROR:", err)
+		os.Exit(1)
+	}
+
+	// To manage multiple API requests
+	ctx, _ := context.WithTimeout(context.Background(), 15*time.Second)
+
+	// Access a MongoDB collection through a database
+	col := client.Database("DATABASE_NAME").Collection("COLLECTION_NAME")
+
+	// Declare a MongoDB struct instance for the document's fields and data
+	newData := Data{
+		ID: 12,
+		Task: "Learn Go",
+	}
+
+	result, err := col.InsertOne(ctx, newData)
+	if err != nil {
+		fmt.Println("ERROR:", err)
+		os.Exit(1)
+
+	} else {
+	fmt.Println("Result:", result)
+	}
+}
+
+```
+
 [Go back to top &#8593;](#Contents)
 
 ## Working with Websockets
