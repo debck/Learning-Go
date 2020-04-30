@@ -189,7 +189,7 @@ func main() {
 
 ## Adding MiddleWare
 
-Here, the `Middlware` function allows adding more than one layer of middleware and handle them appropriately.
+Here, the `Middleware` function allows adding more than one layer of middleware and handle them appropriately.
 `SomeMiddleware` is the middleware function which gets called before the route handler function `getAllTask`
 
 ```go
@@ -285,7 +285,7 @@ func main() {
 
 ## Adding Database
 
-Here in this example we have connected MongoDB with our applicationa and saved sample data into the collection 
+Here in this example we have connected MongoDB with our application and saved sample data into the collection 
 
 ```go
 
