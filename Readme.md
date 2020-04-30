@@ -285,7 +285,7 @@ func main() {
 
 ## Adding Database
 
-Here in this example we tried to connect MongoDB with our applicationa and same sample data into the collection 
+Here in this example we have connected MongoDB with our applicationa and saved sample data into the collection 
 
 ```go
 
