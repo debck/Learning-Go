@@ -383,7 +383,7 @@ func TestGetAllTask(t *testing.T) {
 }
 
 ```
-Remember Test file should be name of original file + test like: `base.go` - `base_test.go`.
+Remember Test file should be name of original file + test like: `base.go` - `base_test.go`.(good practice)
 
 After running the above test case by `go test -v` command, the following output will appear
 
