@@ -346,6 +346,54 @@ func main() {
 
 ## Writing Unit Test
 
+Consider the [Adding Routes](#Adding-Routes) section for testing. The below test case is for the `/task` route which returns an array of tasks created by users.
+
+```go
+
+package main
+
+import (
+	"net/http"
+	"testing"
+	"net/http/httptest"
+	"strings"
+)
+
+func TestGetAllTask(t *testing.T) {
+	req, err := http.NewRequest("GET", "http://localhost:8000/task", nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	res := httptest.NewRecorder()
+	handler := http.HandlerFunc(getAllTask)
+	handler.ServeHTTP(res, req)
+	
+	if status := res.Code; status != http.StatusOK {
+		t.Errorf("Wrong Status Code: got %v want %v",
+			status, http.StatusOK)
+	}
+
+	// Check the response body is what we expect.
+	expected := `[{"id":"1","task":"Hello"},{"id":"2","task":"World"},{"id":"3","task":"yeah"}]`
+
+	if strings.TrimRight(res.Body.String(),"\n") != expected {
+		t.Errorf("ERROR: got %v want %v",
+			res.Body.String(), expected)
+	}
+}
+
+```
+Remember Test file should be name of original file + test like: `base.go` - `base_test.go`.
+
+After running the above test case by `go test -v` command, the following output will appear
+
+```bash
+F:\Go\src\Rest_API>go test -v
+=== RUN   TestGetAllTask
+--- PASS: TestGetAllTask (0.00s)
+PASS
+ok      Rest_API        0.454s
+```
 
 [Go back to top &#8593;](#Contents)
 
