@@ -4,7 +4,7 @@
 
 ## Contents
 * [Installation](#Installation)
-* [Concepts to learn before diving into Web](#Initial-Concepts-List)
+* [Concepts to learn before diving into Web](#Initial-Concepts-to-Study-before-diving-deep)
 * [Basic Hello World](#Basic-Hello-World)
 * [Adding static assets](#Adding-static-asset)
 * [Creating Routes](#Adding-Routes)
@@ -19,9 +19,9 @@
 
 ## Installation
 
-> Follow the [official doc](https://golang.org/doc/install) and Setup Go depending on your OS (ie. Windows , Linux, OS X)
+> Follow the [official doc](https://golang.org/doc/install) and setup Go depending on your OS (ie. Windows , Linux, OS X)
 
-## Initial Concepts List
+## Initial Concepts to Study before diving deep
 
 * Basic Understanding of
     * Variables
@@ -73,6 +73,8 @@ func main() {
 
 ## Adding static asset
 
+When we want to serve static files like CSS, JavaScript or images to Web.
+
 ```go
 func main() {
     http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
@@ -100,7 +102,7 @@ import (
 
 
 type Tasks struct {
-    ID 			string  	`json:"id,omitempty"`
+    ID 		string  	`json:"id,omitempty"`
     TASKNAME 	string 		`json:"task,omitempty"`
 }
 
@@ -180,7 +182,94 @@ func main() {
 
 ## Adding MiddleWare
 
+Here, the `Middlware` function allows adding more than one layer of middleware and handle them appropriately.
+`SomeMiddleware` is the middleware function which gets called before the route handler function `getAllTask`
+
+```go
+
+package main
+
+import (
+    "encoding/json"
+    "log"
+    "net/http"
+    "github.com/gorilla/mux"
+)
+
+func getAllTask(w http.ResponseWriter, r *http.Request) {
+	// ... do something inside this route
+}
+
+
+// Function allows adding more than one layer of middleware and handle them appropriately
+
+func Middleware(h http.Handler, middleware ...func(http.Handler) http.Handler) http.Handler {
+    for _, mw := range middleware {
+        h = mw(h)
+    }
+    return h
+}
+
+// Middlware function
+
+func SomeMiddleware(next http.Handler) http.Handler {
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		
+		 // ... do middleware things
+
+        next.ServeHTTP(w, r)
+    })
+}
+
+func main() {
+
+	router := mux.NewRouter()
+	router.Handle("/task", Middleware(
+        http.HandlerFunc(getAllTask),
+        SomeMiddleware,
+    ))
+    log.Fatal(http.ListenAndServe(":8000", router))
+}
+
+
+```
+
 ## Sessions Management
+
+```go
+
+import (
+    "os"
+    "log"
+    "net/http"
+    "github.com/gorilla/sessions"
+)
+
+var store = sessions.NewCookieStore([]byte(os.Getenv("SESSION_KEY")))
+
+func Handlerfunction(w http.ResponseWriter, r *http.Request) {
+	session, err := store.Get(r, "session-name")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	
+	// Set some session values.
+    	session.Values["hello"] = "world"
+    	// Save it 
+    	session.Save(r, w)
+}
+
+
+func main() {
+    http.HandleFunc("/", Handlerfunction)
+    
+    if err := http.ListenAndServe(":8080", nil); err != nil {
+        log.Fatal(err)
+    }
+}
+
+```
 
 ## Adding Database
 
