@@ -5,8 +5,12 @@ A simple list of concepts and code snippets that would help in learning Golang a
 <br />
 <br />
 
-> ✌️ Hope you find something useful. If you like it please give it a 🌟.
+[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
+[![GitHub license](https://img.shields.io/github/license/debck/Learning-Go?style=flat-square)](https://github.com/debck/Learning-Go/blob/master/LICENSE)  ![Maintenance](https://img.shields.io/maintenance/yes/2020?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/debck/Learning-Go?style=flat-square)
+[![HitCount](http://hits.dwyl.com/debck/Learning-Go.svg)](http://hits.dwyl.com/debck/Learning-Go)
 
+
+> ✌️ Hope you find something useful. If you like it please give it a 🌟.
 
 ## Contents
 * [Installation](#Installation)
