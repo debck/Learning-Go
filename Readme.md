@@ -22,7 +22,10 @@ A simple list of concepts and code snippets that would help in learning Golang a
 * [Adding MiddleWare](#Adding-MiddleWare)
 * [Sessions Management](#Sessions-Management)
 * [Adding Database](#Adding-Database)
+	* [MongoDB](#MongoDB)
 * [Writing Unit Test](#Writing-Unit-Test)
+* [Parsing XML Data](#Parsing-XML-Data)
+* [File Uploading](#File-Uploading)
 
 ## Installation
 
@@ -289,6 +292,8 @@ func main() {
 
 ## Adding Database
 
+### MongoDB
+
 Here in this example we have connected MongoDB with our application and saved sample data into the collection 
 
 ```go
@@ -400,6 +405,19 @@ ok      Rest_API        0.454s
 ```
 
 [Go back to top &#8593;](#Contents)
+
+
+## Parsing XML Data
+
+> Todo 
+
+## File Uploading
+
+> Todo
+
+## Contribute
+
+Contributions are always welcome! Please open an [issue](https://github.com/debck/Learning-Go/issues/new) if you think something should be added to the list.
 
 ## Licence
 
