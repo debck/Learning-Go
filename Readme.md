@@ -409,7 +409,70 @@ ok      Rest_API        0.454s
 
 ## Parsing XML Data
 
-> Todo 
+For example we have taken [this](https://github.com/debck/Learning-Go/blob/master/assets/foods.xml) XML file for parsing. 
+
+```go
+package main
+
+import (
+	"encoding/xml"
+	"fmt"
+	"io/ioutil"
+	"os"
+)
+
+// struct which contains the array of all Foods in the file.
+type Foods struct {
+	Foods []Food `xml:"food"`
+}
+
+// struct which contains the details of one food.
+type Food struct {
+	Name     string `xml:"name"`
+	Price    string `xml:"price"`
+	Calories string `xml:"calories"`
+}
+
+func main() {
+	// Open xml file
+	xmlFile, err := os.Open("foods.xml")
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	// defer the closing of our xmlfile so that we can parse later
+	defer xmlFile.Close()
+
+	// read the xml file as a byte array.
+	byteValue, _ := ioutil.ReadAll(xmlFile)
+
+	var f Foods
+
+	xml.Unmarshal(byteValue, &f)
+
+	// Do something with the info.....
+
+	// Here, we print out the Foods as just an example
+
+	fmt.Println("______MENU______")
+	for i := 0; i < len(f.Foods); i++ {
+		fmt.Println(f.Foods[i].Name + " " + f.Foods[i].Price + " " + f.Foods[i].Calories)
+	}
+
+}
+
+```
+After running the above program, the following output will appear
+
+```bash
+F:\Go\src\Code>go run parsexml.go
+______MENU______
+Belgian Waffles $5.95 650
+French Toast $4.50 600
+```
+
+[Go back to top &#8593;](#Contents)
 
 ## File Uploading
 
