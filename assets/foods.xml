@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+    <food>
+        <name>Belgian Waffles</name>
+        <price>$5.95</price>
+        <calories>650</calories>
+    </food>
+    <food>
+        <name>French ToastFrench Toast</name>
+        <price>$4.50</price>
+        <calories>600</calories>
+    </food>
+</menu>
