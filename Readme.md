@@ -1,7 +1,7 @@
 <p align="center">
   <img  src="https://user-images.githubusercontent.com/33368759/80697133-2a085b00-8af6-11ea-9506-903486db94c1.png">
 </p>
-A simple list of concepts and code snippets that would help in learning Golang and applying in Web Development :tada:. I tried to jot down when I was learning. It might be helpful for beginners who want to learn Go for web development.
+A simple list of concepts and code snippets that would help in learning Golang and apply in Web Development :tada:. I tried to jot down when I was learning. It might be helpful for beginners who want to learn Go for web development.
 <br />
 <br />
 
